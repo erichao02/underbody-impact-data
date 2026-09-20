@@ -54,9 +54,15 @@
     }
   },
   "checksums": {
-    "checked_files": 1564
+    "checked_files": 1563
   },
   "elapsed_seconds": 19.193401336669922,
   "errors": [],
-  "scope_note": "Technical package validation only; provenance and remaining configuration limitations are documented in the release metadata."
+  "scope_note": "Technical package validation only; provenance and remaining configuration limitations are documented in the release metadata.",
+  "documentation_update": {
+    "removed_file": "README_zh.md",
+    "data_files_changed": 0,
+    "checksums_reverified": 1563,
+    "scope": "Documentation removal only. Full tensor/mesh/split results retained from the initial release validation; all remaining release checksums reverified."
+  }
 }
