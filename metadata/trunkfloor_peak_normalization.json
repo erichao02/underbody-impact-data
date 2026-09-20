@@ -1,0 +1,42 @@
+{
+  "geometry": "trunkfloor",
+  "split": "train",
+  "train_cases": 400,
+  "target_scale_definition": "training-split RMS of peak-state x/y/z displacement and same-state max-IP von Mises effective stress",
+  "target_feature_names": [
+    "disp_x",
+    "disp_y",
+    "disp_z",
+    "effective_stress"
+  ],
+  "target_scale": [
+    0.38916057493977263,
+    0.5722944758869976,
+    2.9555388177868207,
+    125.25171014391293
+  ],
+  "condition_feature_names": [
+    "velocity_x",
+    "velocity_y",
+    "velocity_z",
+    "mass_ratio",
+    "material_young_mpa",
+    "material_poisson"
+  ],
+  "condition_mean": [
+    16.704457361306996,
+    -16.622224624343218,
+    3432.0224798583986,
+    1.0026446332037449,
+    131650.0,
+    0.322825009599328
+  ],
+  "condition_std_sample": [
+    390.0118052305684,
+    387.24305428075985,
+    994.8323301706797,
+    0.14387643358676566,
+    59490.5481003765,
+    0.01716116404336039
+  ]
+}

@@ -1,0 +1,12 @@
+open d3plot "d3plot"
+
+genselect target part
+genselect target element
+genselect element add part 2000395/0
+
+etime 9
+xyplot 1 savefile curve_file "results_compact\effective_stress" 1 all
+etime 7
+xyplot 1 savefile curve_file "results_compact\effective_plastic_strain" 1 all
+
+exit

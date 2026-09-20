@@ -1,0 +1,13 @@
+floorfrontR constrained LHS design
+cases=500
+seed=20260728
+trials=128
+normalized_maximin_score=0.17315438
+minimum_xy_spacing_mm=5.02509788
+speed_range_mm_per_s=(1732.05, 5196.15)
+mass_ratio_range=(0.75, 1.25)
+theta_range_deg=(0.0, 15.0)
+phi_range_deg=(0.0, 360.0)
+material_counts={'titanium_rigid': 167, 'aluminum_rigid': 166, 'steel_rigid': 167}
+theta is measured from global +Z; phi is measured in global XY from +X toward +Y.
+Rigid material class controls E/nu used by contact; mass ratio independently scales density.

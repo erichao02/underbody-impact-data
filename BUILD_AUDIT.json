@@ -1,0 +1,18 @@
+{
+  "dataset": "Automotive Underbody Panel Impact Dataset",
+  "version": "1.1.1",
+  "distribution": "git-cases-v1",
+  "audit_date": "2026-09-20",
+  "case_byte_preservation": {
+    "status": "passed",
+    "cases": 1500,
+    "method": "Each extracted .pt file matched the source manifest SHA-256 and size without reserialization"
+  },
+  "binary_metadata_audit": {
+    "status": "passed",
+    "cases": 1500,
+    "scope": "Recursive string fields, serialization metadata and archive entry names checked for known author identifiers and machine paths; not a guarantee of complete anonymity"
+  },
+  "original_build_audit": "metadata/original_build_audit.json",
+  "scope_note": "Repackaging audit; anonymous mirror availability must be checked separately."
+}

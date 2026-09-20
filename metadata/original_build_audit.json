@@ -1,0 +1,28 @@
+{
+  "dataset": "Automotive Underbody Panel Impact Dataset",
+  "version": "1.1.1",
+  "audit_date": "2026-09-11",
+  "case_byte_preservation": {
+    "status": "passed",
+    "cases": 1500,
+    "method": "SHA-256 of each source .pt file recorded in manifest.csv and rechecked from the ZIP member"
+  },
+  "peak_derivation_reference_match": {
+    "status": "passed",
+    "cases": 1500,
+    "floorfrontdriver": "500/500 exact",
+    "floorfrontR": "500/500 exact",
+    "trunkfloor": "500/500 exact",
+    "method": "build_peak_targets.select_peak was applied to each released ZIP member and compared with the pre-existing validated peak-case tensors; selected time index, selected node index, displacement tensor, and max-IP von Mises effective-stress tensor were exactly equal"
+  },
+  "normalization_reproduction": {
+    "status": "passed",
+    "split": "400 training cases only",
+    "outputs": [
+      "metadata/floorfrontdriver_peak_normalization.json",
+      "metadata/floorfrontR_peak_normalization.json",
+      "metadata/trunkfloor_peak_normalization.json"
+    ]
+  },
+  "scope_note": "This is a technical build audit; provenance, units, simulation settings, and remaining solver limitations are documented separately."
+}

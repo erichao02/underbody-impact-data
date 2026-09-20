@@ -1,0 +1,118 @@
+{
+  "geometry": "trunkfloor",
+  "data_revision": "review_release_v1",
+  "cases": 500,
+  "states_per_case": 17,
+  "displacement_shape_per_case": [
+    14440,
+    17,
+    3
+  ],
+  "effective_stress_shape_per_case": [
+    14589,
+    17
+  ],
+  "effective_stress_definition": {
+    "quantity": "von_mises_effective_stress",
+    "entity": "shell_element",
+    "through_thickness_reduction": "max_integration_point",
+    "ls_prepost_component": "etime 9",
+    "ls_prepost_label": "Effective Stress (v-m), ip#max",
+    "integration_point_index_retained": false,
+    "units": "MPa"
+  },
+  "mesh": {
+    "file": "meshes/trunkfloor_mesh.npz",
+    "nodes": 14440,
+    "directed_graph_edges": 58074,
+    "shell_elements": 14589,
+    "shell_triangles": 817,
+    "shell_quads": 13772,
+    "boundary_nodes": 535
+  },
+  "time_value_range": [
+    0.0,
+    0.030000614002346992
+  ],
+  "condition_ranges": {
+    "impact_x": [
+      -4327.884765625,
+      -3648.72900390625
+    ],
+    "impact_y": [
+      -406.519287109375,
+      430.65777587890625
+    ],
+    "impact_z": [
+      486.412841796875,
+      649.58642578125
+    ],
+    "velocity_x": [
+      -1266.122802734375,
+      1200.008056640625
+    ],
+    "velocity_y": [
+      -1262.4493408203125,
+      1177.8699951171875
+    ],
+    "velocity_z": [
+      1711.5562744140625,
+      5177.33935546875
+    ],
+    "impact_speed": [
+      1738.4505615234375,
+      5195.92578125
+    ],
+    "mass_ratio": [
+      0.7506378889083862,
+      1.2490675449371338
+    ],
+    "impactor_mass": [
+      0.007506378460675478,
+      0.012490675784647465
+    ],
+    "impactor_density": [
+      3.907069913111627e-05,
+      6.501397001557052e-05
+    ],
+    "theta_deg": [
+      0.0015588899841532111,
+      14.979633331298828
+    ],
+    "phi_deg": [
+      0.16448494791984558,
+      359.7947998046875
+    ],
+    "material_young_mpa": [
+      70000.0,
+      210000.0
+    ],
+    "material_poisson": [
+      0.30000001192092896,
+      0.3400000035762787
+    ],
+    "material_index": [
+      0,
+      2
+    ]
+  },
+  "material_counts": {
+    "aluminum_rigid": 166,
+    "steel_rigid": 167,
+    "titanium_rigid": 167
+  },
+  "units": {
+    "status": "SPECIFIED",
+    "system": "tonne-mm-s-N",
+    "coordinate": "mm",
+    "displacement": "mm",
+    "time": "s",
+    "velocity": "mm/s",
+    "mass": "tonne",
+    "density": "tonne/mm^3",
+    "effective_stress": "MPa",
+    "material_young_field_name": "material_young_mpa",
+    "angles": "degrees"
+  },
+  "case_file_policy": "original compact 17-state .pt bytes preserved"
+}

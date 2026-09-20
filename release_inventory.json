@@ -1,0 +1,11 @@
+{
+  "dataset": "Automotive Underbody Panel Impact Dataset",
+  "version": "1.1.1",
+  "distribution": "git-cases-v1",
+  "case_files": 1500,
+  "case_bytes": 5031980888,
+  "max_case_bytes": 5287159,
+  "archive_files": 0,
+  "manifest": "manifest.csv",
+  "layout": "data/<geometry>/cases/<case>.pt"
+}

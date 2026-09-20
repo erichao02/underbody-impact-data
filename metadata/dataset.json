@@ -1,0 +1,162 @@
+{
+  "title": "Automotive Underbody Panel Impact Dataset",
+  "version": "1.1.1",
+  "release_status": "public-release",
+  "resource_type": "dataset",
+  "total_cases": 1500,
+  "geometries": [
+    "floorfrontdriver",
+    "floorfrontR",
+    "trunkfloor"
+  ],
+  "cases_per_geometry": 500,
+  "states_per_case": 17,
+  "split": {
+    "seed": 12345,
+    "train": 400,
+    "validation": 50,
+    "test": 50,
+    "note": "same case-ID lists, independent simulations per geometry"
+  },
+  "fields": {
+    "inputs": [
+      "fixed finite-element mesh",
+      "impact_xyz",
+      "velocity_xyz",
+      "mass_ratio",
+      "material_young_mpa",
+      "material_poisson"
+    ],
+    "outputs": [
+      "17-state nodal 3D displacement",
+      "17-state shell von Mises effective stress, maximized over through-thickness integration points"
+    ]
+  },
+  "units": {
+    "status": "SPECIFIED",
+    "system": "tonne-mm-s-N",
+    "coordinate": "mm",
+    "displacement": "mm",
+    "time": "s",
+    "velocity": "mm/s",
+    "effective_stress": "MPa",
+    "young_modulus": "MPa",
+    "impactor_mass": "tonne",
+    "impactor_density": "tonne/mm^3",
+    "mass_ratio": "dimensionless",
+    "theta_phi": "degree"
+  },
+  "license": "MIT",
+  "doi": null,
+  "creators": [
+    "Anonymous Authors"
+  ],
+  "source_model": {
+    "name": "2020 Nissan Rogue finite-element model",
+    "developer": "CCSA, George Mason University",
+    "sponsor": "NHTSA",
+    "exact_version": "Version 3, released August 2024",
+    "official_page": "https://www.ccsa.gmu.edu/models/2020-nissan-rogue/"
+  },
+  "geometry_metadata": {
+    "floorfrontdriver": "floorfrontdriver_geometry.json",
+    "floorfrontR": "floorfrontR_geometry.json",
+    "trunkfloor": "trunkfloor_geometry.json"
+  },
+  "simulation": {
+    "solver": "LS-DYNA SMP single precision R12 via ANSYS v221 lsdyna_sp.exe",
+    "exact_r12_subbuild_retained_for_every_case": false,
+    "ncpu": 8,
+    "memory": "400m",
+    "termination_time_s": 0.03,
+    "d3plot_nominal_interval_s": 0.0002,
+    "gravity_global_z_mm_per_s2": 9810.0,
+    "boundary_condition": "topological outer-boundary nodes fixed in all six degrees of freedom",
+    "contact": "CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID",
+    "static_friction": 0.15,
+    "dynamic_friction": 0.15
+  },
+  "impactor": {
+    "type": "rigid spherical shell",
+    "part_id": 9636,
+    "section_id": 9636,
+    "material_id": 174,
+    "material_model": "MAT_RIGID",
+    "radius_mm": 12.5,
+    "initial_gap_mm": 5.0,
+    "elform": 2,
+    "shrf": 0.833333,
+    "nip": 3,
+    "shell_thickness_mm": 0.1,
+    "reference_nominal_mass_tonne": 0.01,
+    "reference_density_tonne_per_mm3": 5.205e-05,
+    "mass_scaling": "impactor_mass = reference_nominal_mass_tonne * mass_ratio",
+    "density_scaling": "impactor_density = reference_density_tonne_per_mm3 * mass_ratio"
+  },
+  "design": {
+    "method": "seven-dimensional constrained Latin hypercube with maximin selection over 128 trials",
+    "dimensions": [
+      "position_x",
+      "position_y",
+      "impact_speed",
+      "mass_ratio",
+      "theta",
+      "phi",
+      "material_class"
+    ],
+    "impact_speed_mm_per_s": [
+      1732.05,
+      5196.15
+    ],
+    "mass_ratio": [
+      0.75,
+      1.25
+    ],
+    "theta_deg": [
+      0.0,
+      15.0
+    ],
+    "phi_deg": [
+      0.0,
+      360.0
+    ],
+    "minimum_boundary_distance_mm": 80.0,
+    "seeds": {
+      "floorfrontR": 20260728,
+      "trunkfloor": 20260723,
+      "floorfrontdriver_initial": 20260721,
+      "floorfrontdriver_extensions": 20260722
+    }
+  },
+  "temporal_sampling": {
+    "raw_nominal_interval_s": 0.0002,
+    "compact_stride": 10,
+    "append_final_state": true,
+    "retained_indices": [
+      0,
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100,
+      110,
+      120,
+      130,
+      140,
+      150,
+      151
+    ],
+    "peak_time_definition": "discrete argmax of valid-node displacement magnitude over retained states"
+  },
+  "distribution": {
+    "id": "git-cases-v1",
+    "layout": "data/<geometry>/cases/<case>.pt",
+    "case_bytes_unchanged_from_data_version": "1.1.1",
+    "git_lfs_required": false
+  }
+}

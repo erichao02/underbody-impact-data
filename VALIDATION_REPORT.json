@@ -1,0 +1,62 @@
+{
+  "dataset": "Automotive Underbody Panel Impact Dataset",
+  "version": "1.1.1",
+  "distribution": "git-cases-v1",
+  "status": "passed",
+  "cases_validated": 1500,
+  "split_sizes": {
+    "train": 400,
+    "val": 50,
+    "test": 50
+  },
+  "archives": {
+    "layout": "individual-case-files",
+    "case_files": 1500,
+    "case_bytes": 5031980888,
+    "archives": 0
+  },
+  "geometries": {
+    "floorfrontdriver": {
+      "nodes": 7408,
+      "edges": 29572,
+      "elements": 7374,
+      "cases": 500,
+      "source_case_bytes": 1099705500,
+      "materials": {
+        "aluminum_rigid": 167,
+        "steel_rigid": 166,
+        "titanium_rigid": 167
+      }
+    },
+    "floorfrontR": {
+      "nodes": 12011,
+      "edges": 48138,
+      "elements": 12055,
+      "cases": 500,
+      "source_case_bytes": 1783897500,
+      "materials": {
+        "aluminum_rigid": 166,
+        "steel_rigid": 167,
+        "titanium_rigid": 167
+      }
+    },
+    "trunkfloor": {
+      "nodes": 14440,
+      "edges": 58074,
+      "elements": 14589,
+      "cases": 500,
+      "source_case_bytes": 2148377888,
+      "materials": {
+        "aluminum_rigid": 166,
+        "steel_rigid": 167,
+        "titanium_rigid": 167
+      }
+    }
+  },
+  "checksums": {
+    "checked_files": 1564
+  },
+  "elapsed_seconds": 19.193401336669922,
+  "errors": [],
+  "scope_note": "Technical package validation only; provenance and remaining configuration limitations are documented in the release metadata."
+}

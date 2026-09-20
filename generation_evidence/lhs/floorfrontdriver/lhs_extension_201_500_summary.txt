@@ -1,0 +1,11 @@
+floorfrontdriver sequential constrained LHS extension
+preserved_cases=1-200
+added_cases=201-500
+added_count=300
+total_cases=500
+extension_seed=20260722
+extension_trials=128
+extension_normalized_maximin_score=0.22052899
+extension_minimum_xy_spacing_mm=6.43164167
+combined_material_counts={'titanium_rigid': 167, 'steel_rigid': 166, 'aluminum_rigid': 167}
+The added 300 cases form an independent constrained LHS batch.

@@ -1,0 +1,6 @@
+cases=200
+seed_extension=20260722
+trials=128
+combined_normalized_maximin_score=0.25806791
+material_counts={'titanium_rigid': 67, 'steel_rigid': 66, 'aluminum_rigid': 67}
+case001-case100 preserved; case101-case200 use complementary 200-bin nested LHS strata.

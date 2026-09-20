@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this dataset, cite data version 1.1.1, distribution git-cases-v1; use the anonymous data link during review."
+title: "Automotive Underbody Panel Impact Dataset"
+type: dataset
+version: 1.1.1
+date-released: 2026-09-11
+authors:
+  - family-names: "Authors"
+    given-names: "Anonymous"
+keywords:
+  - finite element simulation
+  - impact mechanics
+  - graph neural operator
+  - displacement field
+  - von Mises effective stress
+  - LS-DYNA
+license: MIT

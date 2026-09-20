@@ -1,0 +1,12 @@
+CurvePlot source header observed from the retained LS-PrePost export:
+
+Curveplot
+Element History
+Time
+Effective Stress (v-m), ip#max
+Element no.
+2340533 #pts=152
+
+Interpretation: for every shell element and exported state, effective_stress
+is the maximum von Mises stress across the available through-thickness
+integration points. It is not a fixed upper, lower, or middle surface value.

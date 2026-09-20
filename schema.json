@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.1.0",
+  "case_format": "PyTorch serialized plain dictionary",
+  "recommended_load": "torch.load(file, map_location='cpu', weights_only=True)",
+  "state_count": 17,
+  "case_fields": {
+    "case": {"type": "string", "description": "caseNNN identifier"},
+    "panel_pid": {"dtype": "int64", "shape": []},
+    "nid": {"dtype": "int64", "shape": ["N"]},
+    "boundary_mask": {"dtype": "bool", "shape": ["N"], "description": "true for nodes on the topological outer boundary fixed in all six degrees of freedom"},
+    "valid_node_mask": {"dtype": "bool", "shape": ["N"]},
+    "raw_valid_node_mask": {"dtype": "bool", "shape": ["N"]},
+    "filled_node_mask": {"dtype": "bool", "shape": ["N"]},
+    "filled_node_count": {"dtype": "int64", "shape": []},
+    "time": {"dtype": "float32", "shape": [17], "units": "s", "description": "exact retained nodal-state times"},
+    "time_indices": {"dtype": "int64", "shape": [17], "values": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 151]},
+    "disp": {"dtype": "float32", "shape": ["N", 17, 3], "units": "mm", "description": "nodal Cartesian displacement"},
+    "element_time": {"dtype": "float32", "shape": [17], "units": "s", "description": "exact retained shell-state times"},
+    "element_time_indices": {"dtype": "int64", "shape": [17], "values": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 151]},
+    "element_id": {"dtype": "int64", "shape": ["Ne"]},
+    "repaired_element_ids": {"dtype": "int64", "shape": "variable"},
+    "effective_stress": {
+      "dtype": "float32",
+      "shape": ["Ne", 17],
+      "quantity": "von_mises_effective_stress",
+      "entity": "shell_element",
+      "through_thickness_reduction": "max_integration_point",
+      "ls_prepost_component": "etime 9",
+      "ls_prepost_label": "Effective Stress (v-m), ip#max",
+      "integration_point_index_retained": false,
+      "units": "MPa"
+    },
+    "velocity_vz": {"dtype": "float32", "shape": [], "units": "mm/s", "description": "global-Z component retained for compatibility"},
+    "velocity_xyz": {"dtype": "float32", "shape": [3], "units": "mm/s", "description": "rigid-impactor initial Cartesian velocity"},
+    "impact_speed": {"dtype": "float32", "shape": [], "units": "mm/s", "design_domain": [1732.05, 5196.15]},
+    "impact_xyz": {"dtype": "float32", "shape": [3], "units": "mm", "description": "selected eligible panel-shell centroid; Z is not independently sampled"},
+    "impact_node_distance": {"dtype": "float32", "shape": ["N"], "units": "mm"},
+    "ball_center_xyz": {"dtype": "float32", "shape": [3], "units": "mm", "description": "initial spherical-impactor center"},
+    "impact_element_id": {"dtype": "int64", "shape": []},
+    "mass_ratio": {"dtype": "float32", "shape": [], "units": "dimensionless", "design_domain": [0.75, 1.25], "description": "common scale factor for reference rigid-impactor mass and density"},
+    "impactor_mass": {"dtype": "float32", "shape": [], "units": "tonne", "description": "generator-recorded nominal mass equal to 0.01 * mass_ratio"},
+    "impactor_density": {"dtype": "float32", "shape": [], "units": "tonne/mm^3", "description": "rigid-impactor density equal to 5.205e-5 * mass_ratio"},
+    "theta_deg": {"dtype": "float32", "shape": [], "units": "degree", "design_domain": [0.0, 15.0], "description": "polar angle from global +Z"},
+    "phi_deg": {"dtype": "float32", "shape": [], "units": "degree", "design_domain": [0.0, 360.0], "description": "azimuth in global XY from +X toward +Y"},
+    "material_young_mpa": {"dtype": "float32", "shape": [], "units": "MPa", "values": [70000.0, 110000.0, 210000.0], "entity": "rigid_impactor"},
+    "material_poisson": {"dtype": "float32", "shape": [], "units": "dimensionless", "values": [0.33, 0.34, 0.30], "entity": "rigid_impactor"},
+    "material_index": {"dtype": "int64", "shape": []},
+    "material_one_hot": {"dtype": "float32", "shape": [3]},
+    "material_name": {"type": "string"},
+    "condition_names": {"type": "list[string]", "length": 7},
+    "condition_vector": {"dtype": "float32", "shape": [7]}
+  },
+  "mesh_fields": {
+    "node_pos": {"dtype": "float32", "shape": ["N", 3], "units": "mm"},
+    "edge_index": {"dtype": "int64", "shape": [2, "E"]},
+    "element_node_index": {"dtype": "int64", "shape": ["Ne", 4], "padding": "The third node index is repeated in column four for triangular shells"},
+    "element_node_count": {"dtype": "int64", "shape": ["Ne"], "values": [3, 4]},
+    "boundary_mask": {"dtype": "bool", "shape": ["N"], "description": "topological outer-boundary nodes"}
+  },
+  "geometry_shapes": {
+    "floorfrontdriver": {"N": 7408, "E": 29572, "Ne": 7374},
+    "floorfrontR": {"N": 12011, "E": 48138, "Ne": 12055},
+    "trunkfloor": {"N": 14440, "E": 58074, "Ne": 14589}
+  },
+  "units": {
+    "status": "SPECIFIED",
+    "system": "tonne-mm-s-N",
+    "coordinate": "mm",
+    "displacement": "mm",
+    "time": "s",
+    "velocity": "mm/s",
+    "mass": "tonne",
+    "density": "tonne/mm^3",
+    "effective_stress": "MPa",
+    "young_modulus": "MPa"
+  },
+  "temporal_sampling": {
+    "d3plot_nominal_interval_s": 0.0002,
+    "compact_stride": 10,
+    "append_final_state": true,
+    "peak_time_scope": "argmax over valid nodes and 17 retained states"
+  }
+}

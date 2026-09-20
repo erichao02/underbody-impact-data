@@ -1,0 +1,4 @@
+# Preserve release bytes on every platform.
+* -text
+*.pt binary
+*.npz binary
