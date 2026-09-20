@@ -13,6 +13,14 @@
     "cases": 1500,
     "scope": "Recursive string fields, serialization metadata and archive entry names checked for known author identifiers and machine paths; not a guarantee of complete anonymity"
   },
-  "original_build_audit": "metadata/original_build_audit.json",
-  "scope_note": "Repackaging audit; anonymous mirror availability must be checked separately."
+  "original_build_audit": "metadata/release_audit/original_build_audit.json",
+  "scope_note": "Repackaging audit; anonymous mirror availability must be checked separately.",
+  "inventory": {
+    "case_files": 1500,
+    "case_bytes": 5031980888,
+    "max_case_bytes": 5287159,
+    "archive_files": 0,
+    "manifest": "manifest.csv",
+    "layout": "data/<geometry>/cases/<case>.pt"
+  }
 }
